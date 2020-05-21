@@ -66,3 +66,42 @@ docker login
 give ur username and password
 
 docker push muralidhar123/diabetis:v1 
+
+Deployment in kubernates:
+========================
+
+go to this link install lightweight kubernates
+
+add slave to it
+
+commmnands:
+==========
+#on master
+
+swapoff -a
+
+selinux diable:   
+
+setenforce 0
+it asking not installed 
+apt install selinux-utils
+
+
+create a kubernates pod:
+
+kubectl create -f diabetis.yaml
+
+then see nodeport service
+
+kubectl get svc
+
+copy nodeport ex : 336645
+
+http://localhost:nodeport
+
+
+note:
+===
+if u are using loadbalancer in cloud then change nodeport to loadbalancer in diabetis.yaml
+
+
