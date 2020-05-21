@@ -1,6 +1,7 @@
 from flask import Flask, request
 import numpy as np
 import pickle
+import math
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 import flasgger
@@ -9,7 +10,7 @@ from flasgger import Swagger
 app=Flask(__name__)
 Swagger(app)
 
-with open('./model.pkl', 'rb') as model_pkl:
+with open('model.pkl', 'rb') as model_pkl:
     lg = pickle.load(model_pkl)
 
  
@@ -69,7 +70,8 @@ def predict_note_authentication():
     BMI = request.args.get('BMI')
     DiabetesPedigreeFunction = request.args.get('DiabetesPedigreeFunction')
     Age = request.args.get('Age')
-    prediction = lg.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
+    pred = np.array([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]]).astype(np.float64)
+    prediction = lg.predict(pred)
     print(prediction)
     return "Hello The answer is"+str(prediction)
 if __name__=='__main__':
