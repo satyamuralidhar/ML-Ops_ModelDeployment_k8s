@@ -76,7 +76,7 @@ go to this link install lightweight kubernates
 
 add slave to it
 
-commmnands:
+commands:
 ==========
 #on master
 
