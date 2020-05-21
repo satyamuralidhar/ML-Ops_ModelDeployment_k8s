@@ -19,43 +19,50 @@ after installing build a docker images
 clone this repo by using git.
 
 step1 :
-=======
+
 go to app folder
 
 and then excute commands:
 =======================
 
-#docker build -t diabetis:v1 .  #note v1 '.' is necessary
-#docker -d -p 5000:5000 --name diabetis diabetis:v1
+docker build -t diabetis:v1 .  #note v1 '.' is necessary
+
+docker -d -p 5000:5000 --name diabetis diabetis:v1
 
 see if you want to see output remove -d from dcoker build 
 
-to see the images 
 
 docker commands:
-===============
+=================
 docker images   # to see the images
+
 docker ps       # to see the running contaiers
+
 docker ps -a    # to see all containers
+
 docker rmi <imagename or id>   # to remove the image
+  
 docker rm -f $(docker ps -a -q)   # to remove alll containers
+
 docker rmi -f $(docker images -q) # to remove all images
+
 docker exec -it <containerid or contiainer name> /bin/bash      # to login to container
   
   
 deploy our image to dockerhub:
-=============================
+===============================
 first we need to create a account on dockerhub
 
 after building is done .
-tag our image to yours dockerhub username:
-=========================================
 
-# docker tag diabetis:v1 muralidhar123/diabetis:v1
+tag our image to yours dockerhub username:
+
+docker tag diabetis:v1 muralidhar123/diabetis:v1
 
 then login
 
-# docker login
+docker login
+
 give ur username and password
 
-#docker push muralidhar123/diabetis:v1 
+docker push muralidhar123/diabetis:v1 
