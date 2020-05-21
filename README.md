@@ -2,6 +2,8 @@
 
 Thanks to @krishnaik @sudhansu sir 
 
+https://raw.githubusercontent.com/satyamuralidhar/ML-Ops_ModelDeployment_k8s/master/Capture.PNG
+
 for building a docker images we need to install docker 
 
 here iam using flasgger for ui 
