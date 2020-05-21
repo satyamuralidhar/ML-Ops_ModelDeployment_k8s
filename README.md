@@ -2,7 +2,7 @@
 
 Thanks to @krishnaik @sudhansu sir 
 
-https://raw.githubusercontent.com/satyamuralidhar/ML-Ops_ModelDeployment_k8s/master/Capture.PNG
+![Capture](https://user-images.githubusercontent.com/38804803/82556710-e8fce700-9b87-11ea-8e78-6fe0269268a4.PNG)
 
 for building a docker images we need to install docker 
 
