@@ -2,7 +2,7 @@ from flask import Flask, request
 import numpy as np
 import pickle
 import math
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 import flasgger
 from flasgger import Swagger
