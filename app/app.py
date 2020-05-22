@@ -11,7 +11,7 @@ app=Flask(__name__)
 Swagger(app)
 
 with open('model.pkl', 'rb') as model_pkl:
-    lg = pickle.load(model_pkl)
+    rf = pickle.load(model_pkl)
 
  
 @app.route('/')
@@ -71,9 +71,9 @@ def predict_note_authentication():
     DiabetesPedigreeFunction = request.args.get('DiabetesPedigreeFunction')
     Age = request.args.get('Age')
     pred = np.array([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]]).astype(np.float64)
-    prediction = lg.predict(pred)
+    prediction = rf.predict(pred)
     print(prediction)
-    return "Hello The answer is"+str(prediction)
+    return "result "+str(prediction)
 if __name__=='__main__':
     app.run(debug=True,host='0.0.0.0',port=5000)
     
