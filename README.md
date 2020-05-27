@@ -1,6 +1,5 @@
 # ML-Ops_ModelDeployment_k8s
 
-Thanks to @krishnaik @sudhansu sir 
 
 ![Capture](https://user-images.githubusercontent.com/38804803/82556710-e8fce700-9b87-11ea-8e78-6fe0269268a4.PNG)
 
@@ -22,12 +21,12 @@ clone this repo by using git.
 
 step1 :
 
-go to app folder
+go to /app folder
 
 and then excute commands:
 =======================
 
-docker build -t diabetis:v1 .  #note v1 '.' is necessary
+docker build -t diabetis:v1 .     #note v1 '.' is necessary
 
 docker -d -p 5000:5000 --name diabetis diabetis:v1
 
